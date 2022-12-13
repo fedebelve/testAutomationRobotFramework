@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.8.8 on linux)" generated="20221213 01:15:00.215" rpa="true" schemaversion="3">
+<suite id="s1" name="AgregarVacante" source="/media/fedebelve/storage/projects/rpa/test/UI/AgregarVacante.robot">
+<kw name="Setup Navegador" library="Configuraciones" type="SETUP">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.10</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20221213 01:15:00.311" endtime="20221213 01:15:00.311"/>
+</kw>
+<kw name="Abrir Navegador" library="FrameworkProxy">
+<arg>${gWebUrl}</arg>
+<arg>${gBrowser}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${aBrowser}' != 'Edge'</arg>
+<arg>Open Browser</arg>
+<arg>${aURL}</arg>
+<arg>${aBrowser}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${aURL}</arg>
+<arg>${aBrowser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221213 01:15:00.312" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20221213 01:15:00.312" endtime="20221213 01:15:05.194"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:00.312" endtime="20221213 01:15:05.194"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${aBrowser}' == 'Edge'</arg>
+<arg>Open Browser</arg>
+<arg>${aURL}</arg>
+<arg>${aBrowser}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20221213 01:15:05.194" endtime="20221213 01:15:05.194"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:00.311" endtime="20221213 01:15:05.194"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:00.311" endtime="20221213 01:15:05.195"/>
+</kw>
+<test id="s1-t1" name="Agregar Nueva Vacante de Trabajo" line="23">
+<kw name="Usuario @{Admin} se autentica correctamente" library="LoginTask">
+<kw name="Ingresar Credenciales" library="LoginActions">
+<arg>@{Admin}</arg>
+<kw name="Ingresar Texto" library="FrameworkProxy">
+<arg>${txtUserName}</arg>
+<arg>${Admin}[0]</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221213 01:15:05.196" endtime="20221213 01:15:05.823"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 01:15:05.823" endtime="20221213 01:15:06.036"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20221213 01:15:06.036" endtime="20221213 01:15:06.244"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>${aText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221213 01:15:06.245" level="INFO">Typing text 'Admin' into text field 'name:username'.</msg>
+<status status="PASS" starttime="20221213 01:15:06.244" endtime="20221213 01:15:06.586"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:05.196" endtime="20221213 01:15:06.586"/>
+</kw>
+<kw name="Ingresar Texto" library="FrameworkProxy">
+<arg>${txtPassword}</arg>
+<arg>${Admin}[1]</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221213 01:15:06.587" endtime="20221213 01:15:06.908"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 01:15:06.908" endtime="20221213 01:15:07.122"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20221213 01:15:07.122" endtime="20221213 01:15:07.331"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>${aText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221213 01:15:07.332" level="INFO">Typing text 'admin123' into text field 'name:password'.</msg>
+<status status="PASS" starttime="20221213 01:15:07.332" endtime="20221213 01:15:07.672"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:06.586" endtime="20221213 01:15:07.672"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:05.196" endtime="20221213 01:15:07.672"/>
+</kw>
+<kw name="Presionar Ingresar" library="LoginActions">
+<kw name="Presionar Boton" library="FrameworkProxy">
+<arg>${btnIngresar}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221213 01:15:07.673" endtime="20221213 01:15:07.991"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 01:15:07.991" endtime="20221213 01:15:08.204"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20221213 01:15:08.204" endtime="20221213 01:15:08.414"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221213 01:15:08.415" level="INFO">Clicking button 'xpath://*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button'.</msg>
+<status status="PASS" starttime="20221213 01:15:08.414" endtime="20221213 01:15:08.949"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:07.672" endtime="20221213 01:15:08.950"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:07.672" endtime="20221213 01:15:08.950"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:05.195" endtime="20221213 01:15:08.950"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221213 01:15:11.950" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221213 01:15:08.950" endtime="20221213 01:15:11.950"/>
+</kw>
+<kw name="Agregar la vacante ${JobTitle} de trabajo con los datos: ${Name}, ${Manager}, ${Number}, ${Description}, ${Active}" library="VacancieAddTask" sourcename="Agregar la vacante ${JobTitle} de trabajo con los datos: ${Name}, ${Manager}, ${Number}, ${Description}, ${Active}">
+<kw name="Ingresar a Recruitment -&gt; Vacancies" library="MenuActions">
+<kw name="Clickear Elemento" library="FrameworkProxy">
+<arg>${menuRecruitment}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 01:15:11.952" endtime="20221213 01:15:12.166"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=15</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221213 01:15:12.166" endtime="20221213 01:15:12.482"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20221213 01:15:12.482" endtime="20221213 01:15:12.696"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221213 01:15:12.697" level="INFO">Clicking element 'xpath://*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[5]/a'.</msg>
+<status status="PASS" starttime="20221213 01:15:12.697" endtime="20221213 01:15:16.645"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:11.951" endtime="20221213 01:15:16.645"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:11.951" endtime="20221213 01:15:16.645"/>
+</kw>
+<kw name="Registrar Vacante" library="VacancyAddActions">
+<arg>${JobTitle}</arg>
+<arg>${Name}</arg>
+<arg>${Manager}</arg>
+<arg>${Number}</arg>
+<arg>${Description}</arg>
+<arg>${Active}</arg>
+<kw name="Clickear Elemento" library="FrameworkProxy">
+<arg>${ddlJobTitle}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 01:15:16.646" endtime="20221213 01:15:25.561"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=15</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221213 01:15:25.562" endtime="20221213 01:15:25.878"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20221213 01:15:25.878" endtime="20221213 01:15:26.086"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221213 01:15:26.087" level="INFO">Clicking element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/div/div'.</msg>
+<status status="PASS" starttime="20221213 01:15:26.086" endtime="20221213 01:15:26.313"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:16.646" endtime="20221213 01:15:26.313"/>
+</kw>
+<kw name="Clickear Elemento" library="FrameworkProxy">
+<arg>${ddlJobTitleSeleccionado}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 01:15:26.314" endtime="20221213 01:15:26.527"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=15</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221213 01:15:26.528" endtime="20221213 01:15:26.844"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20221213 01:15:26.845" endtime="20221213 01:15:27.053"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221213 01:15:27.054" level="INFO">Clicking element 'xpath:/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/div/div[2]/div[3]'.</msg>
+<status status="PASS" starttime="20221213 01:15:27.053" endtime="20221213 01:15:27.278"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:26.314" endtime="20221213 01:15:27.278"/>
+</kw>
+<kw name="Clickear Elemento" library="FrameworkProxy">
+<arg>${txtVacancyName}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 01:15:27.279" endtime="20221213 01:15:27.493"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=15</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221213 01:15:27.493" endtime="20221213 01:15:27.809"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20221213 01:15:27.809" endtime="20221213 01:15:28.018"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221213 01:15:28.019" level="INFO">Clicking element 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/div/div'.</msg>
+<status status="PASS" starttime="20221213 01:15:28.018" endtime="20221213 01:15:28.246"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:27.278" endtime="20221213 01:15:28.246"/>
+</kw>
+<kw name="Clickear Elemento" library="FrameworkProxy">
+<arg>${txtVacancyNameSeleccionado}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 01:15:28.247" endtime="20221213 01:15:28.462"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=15</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221213 01:15:28.462" endtime="20221213 01:15:28.779"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20221213 01:15:28.780" endtime="20221213 01:15:28.988"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221213 01:15:28.988" level="INFO">Clicking element 'xpath:/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/div/div[2]/div[2]'.</msg>
+<status status="PASS" starttime="20221213 01:15:28.988" endtime="20221213 01:15:29.212"/>
+</kw>
+<status status="PASS" starttime="20221213 01:15:28.246" endtime="20221213 01:15:29.212"/>
+</kw>
+<kw name="Ingresar Texto" library="FrameworkProxy">
+<arg>${txtVacancyName}</arg>
+<arg>${Name}</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221213 01:15:29.213" endtime="20221213 01:15:29.526"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221213 01:15:29.527" endtime="20221213 01:15:29.736"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20221213 01:15:29.737" endtime="20221213 01:15:29.944"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${aElement}</arg>
+<arg>${aText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221213 01:15:29.945" level="INFO">Typing text 'Quality Engineer Lead' into text field 'xpath://*[@id="app"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/div/div'.</msg>
+<msg timestamp="20221213 01:15:30.234" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221213 01:15:30.234" level="FAIL">InvalidElementStateException: Message: invalid element state
+  (Session info: chrome=108.0.5359.94)
+Stacktrace:
+#0 0x5637160e82a3 &lt;unknown&gt;
+#1 0x563715ea6dfd &lt;unknown&gt;
+#2 0x563715edae81 &lt;unknown&gt;
+#3 0x563715f03b32 &lt;unknown&gt;
+#4 0x563715ed861f &lt;unknown&gt;
+#5 0x563715f03cfe &lt;unknown&gt;
+#6 0x563715f1b47c &lt;unknown&gt;
+#7 0x563715f03903 &lt;unknown&gt;
+#8 0x563715ed6ece &lt;unknown&gt;
+#9 0x563715ed7fde &lt;unknown&gt;
+#10 0x56371613863e &lt;unknown&gt;
+#11 0x56371613bb79 &lt;unknown&gt;
+#12 0x56371611e89e &lt;unknown&gt;
+#13 0x56371613ca83 &lt;unknown&gt;
+#14 0x563716111505 &lt;unknown&gt;
+#15 0x56371615dca8 &lt;unknown&gt;
+#16 0x56371615de36 &lt;unknown&gt;
+#17 0x563716179333 &lt;unknown&gt;
+#18 0x7f7b52a3eb43 &lt;unknown&gt;
+</msg>
+<status status="FAIL" starttime="20221213 01:15:29.944" endtime="20221213 01:15:30.235"/>
+</kw>
+<status status="FAIL" starttime="20221213 01:15:29.212" endtime="20221213 01:15:30.235"/>
+</kw>
+<kw name="Ingresar Texto" library="FrameworkProxy">
+<arg>${txtHiringManager}</arg>
+<arg>${Manager}</arg>
+<status status="NOT RUN" starttime="20221213 01:15:30.235" endtime="20221213 01:15:30.235"/>
+</kw>
+<kw name="Ingresar Texto" library="FrameworkProxy">
+<arg>${txtNumerPosition}</arg>
+<arg>${NumberPositions}</arg>
+<status status="NOT RUN" starttime="20221213 01:15:30.235" endtime="20221213 01:15:30.235"/>
+</kw>
+<kw name="Ingresar Texto" library="FrameworkProxy">
+<arg>${txtDescription}</arg>
+<arg>${Description}</arg>
+<status status="NOT RUN" starttime="20221213 01:15:30.235" endtime="20221213 01:15:30.235"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${Active}&quot; == &quot;NO&quot;">
+<kw name="Clickear Elemento" library="FrameworkProxy">
+<arg>${chkStatus}</arg>
+<status status="NOT RUN" starttime="20221213 01:15:30.235" endtime="20221213 01:15:30.235"/>
+</kw>
+<status status="NOT RUN" starttime="20221213 01:15:30.235" endtime="20221213 01:15:30.235"/>
+</branch>
+<status status="NOT RUN" starttime="20221213 01:15:30.235" endtime="20221213 01:15:30.235"/>
+</if>
+<status status="FAIL" starttime="20221213 01:15:16.645" endtime="20221213 01:15:30.235"/>
+</kw>
+<status status="FAIL" starttime="20221213 01:15:11.951" endtime="20221213 01:15:30.236"/>
+</kw>
+<kw name="Se muestra el mensaje de vacante creada correctamente" library="VacancieAddQuestions">
+<status status="NOT RUN" starttime="20221213 01:15:30.236" endtime="20221213 01:15:30.236"/>
+</kw>
+<status status="FAIL" starttime="20221213 01:15:05.195" endtime="20221213 01:15:30.236">InvalidElementStateException: Message: invalid element state
+  (Session info: chrome=108.0.5359.94)
+Stacktrace:
+#0 0x5637160e82a3 &lt;unknown&gt;
+#1 0x563715ea6dfd &lt;unknown&gt;
+#2 0x563715edae81 &lt;unknown&gt;
+#3 0x563715f03b32 &lt;unknown&gt;
+#4 0x563715ed861f &lt;unknown&gt;
+#5 0x563715f03cfe &lt;unknown&gt;
+#6 0x563715f1b47c &lt;unknown&gt;
+#7 0x563715f03903 &lt;unknown&gt;
+#8 0x563715ed6ece &lt;unknown&gt;
+#9 0x563715ed7fde &lt;unknown&gt;
+#10 0x56371613863e &lt;unknown&gt;
+#11 0x56371613bb79 &lt;unknown&gt;
+#12 0x56371611e89e &lt;unknown&gt;
+#13 0x56371613ca83 &lt;unknown&gt;
+#14 0x563716111505 &lt;unknown&gt;
+#15 0x56371615dca8 &lt;unknown&gt;
+#16 0x56371615de36 &lt;unknown&gt;
+#17 0x563716179333 &lt;unknown&gt;
+#18 0x7f7b52a3eb43 &lt;unknown&gt;
+</status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221213 01:15:30.236" endtime="20221213 01:15:30.391"/>
+</kw>
+<status status="FAIL" starttime="20221213 01:15:00.216" endtime="20221213 01:15:30.391"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="AgregarVacante">AgregarVacante</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

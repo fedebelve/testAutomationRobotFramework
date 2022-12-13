@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.8.8 on linux)" generated="20221212 16:18:31.012" rpa="false">
+<suite id="s1" name="Verificar Titulo" source="/media/fedebelve/storage/projects/rpa/struct_robot/verificar_titulo.robot">
+<test id="s1-t1" name="Verificando titulo de la pagina">
+<kw name="Open Browser">
+<arguments>
+<arg>${pagina}</arg>
+<arg>${navegador}</arg>
+</arguments>
+<errors>
+<msg timestamp="20221212 16:18:31.026" level="ERROR">Error in file '/media/fedebelve/storage/projects/rpa/struct_robot/verificar_titulo.robot': Importing test library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  File "/home/fedebelve/.vscode/extensions/jacobphilip.danfoss-robotframework-debug-1.4.3/out/RobotFrameworkDebugHelpers/robotf/utils/importer.py", line 153, in _import
+    return __import__(name, fromlist=fromlist)
+PYTHONPATH:
+  /home/fedebelve/.vscode/extensions/jacobphilip.danfoss-robotframework-debug-1.4.3/out/RobotFrameworkDebugHelpers
+  /home/fedebelve/anaconda3/lib/python38.zip
+  /home/fedebelve/anaconda3/lib/python3.8
+  /home/fedebelve/anaconda3/lib/python3.8/lib-dynload
+  /home/fedebelve/anaconda3/lib/python3.8/site-packages
+  /home/fedebelve/anaconda3/lib/python3.8/site-packages/locket-0.2.1-py3.8.egg</msg>
+</errors>
+</robot>
